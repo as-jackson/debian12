@@ -192,7 +192,7 @@ apt-get upgrade -y
 
 export APT_INSTALL="apt-get install -fy --allow-downgrades"
 
-echo -e "\033[47;36m ---------- LubanCat -------- \033[0m"
+echo -e "\033[47;36m ---------- ArmSom -------- \033[0m"
 \${APT_INSTALL} dialog toilet u-boot-tools edid-decode logrotate fire-config lbc-test
 
 # pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple setuptools wheel
@@ -210,7 +210,7 @@ systemctl disable apt-daily-upgrade.timer
 systemctl disable apt-daily-upgrade.service
 
 # set localtime
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+#ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 if [[ "$TARGET" == "gnome" ]]; then
     \${APT_INSTALL} mpv fire-config-gui
     #Desktop background picture
@@ -218,7 +218,7 @@ if [[ "$TARGET" == "gnome" ]]; then
 elif [[ "$TARGET" == "xfce" ]]; then
     \${APT_INSTALL} mpv fire-config-gui
     #Desktop background picture
-    chown -hR cat:cat /home/cat/.config
+    #chown -hR cat:cat /home/cat/.config
     ln -sf /usr/share/images/desktop-base/lubancat-wallpaper.png /etc/alternatives/desktop-background
 elif [[ "$TARGET" == "lxde" ]]; then
     \${APT_INSTALL} mpv fire-config-gui
@@ -332,15 +332,15 @@ fi
 echo -e "\033[47;36m ----- Install rktoolkit ----- \033[0m"
 \${APT_INSTALL} /packages/rktoolkit/*.deb
 
-if [[ "$TARGET" == "gnome" || "$TARGET" == "xfce" || "$TARGET" == "lxde" ]]; then
-    echo -e "\033[47;36m Install Chinese fonts.................... \033[0m"
+#if [[ "$TARGET" == "gnome" || "$TARGET" == "xfce" || "$TARGET" == "lxde" ]]; then
+    #echo -e "\033[47;36m Install Chinese fonts.................... \033[0m"
     # Uncomment zh_CN.UTF-8 for inclusion in generation
-    sed -i 's/^# *\(zh_CN.UTF-8\)/\1/' /etc/locale.gen
-    echo "LANG=zh_CN.UTF-8" >> /etc/default/locale
+    #sed -i 's/^# *\(zh_CN.UTF-8\)/\1/' /etc/locale.gen
+    #echo "LANG=zh_CN.UTF-8" >> /etc/default/locale
 
     # Generate locale
-    locale-gen
-fi
+    #locale-gen
+#fi
 
 \${APT_INSTALL} ttf-wqy-zenhei fonts-aenigma
 \${APT_INSTALL} xfonts-intl-chinese
