@@ -358,6 +358,7 @@ apt list --upgradable | cut -d/ -f1 | xargs apt-mark hold
 systemctl mask systemd-networkd-wait-online.service
 systemctl mask NetworkManager-wait-online.service
 systemctl disable hostapd
+systemctl enable wifibt-init
 rm /lib/systemd/system/wpa_supplicant@.service
 
 #---------------Clean--------------
