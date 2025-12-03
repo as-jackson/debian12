@@ -334,7 +334,7 @@ echo -e "\033[47;36m ----- Install rktoolkit ----- \033[0m"
 
 if [[ "$TARGET" == "gnome" || "$TARGET" == "xfce" || "$TARGET" == "lxde" ]]; then
     echo -e "\033[47;36m Install Chinese fonts.................... \033[0m"
-    # Uncomment zh_CN.UTF-8 for inclusion in generation
+    # Uncomment en_US.UTF-8 for inclusion in generation
     sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
     echo "LANG=en_US.UTF-8" >> /etc/default/locale
 

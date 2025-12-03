@@ -30,9 +30,9 @@ board_info() {
 				;;
 			*)
 				echo "Device ID Error !!!"
-				BOARD_NAME='LubanCat-RK3588'
-				BOARD_DTB='rk3588-lubancat-generic.dtb'
-				BOARD_uEnv='uEnvLubanCat.txt'
+				BOARD_NAME='armsom-sige7'
+				BOARD_DTB='rk3588-armsom-sige7.dtb'
+				BOARD_uEnv='uEnvarmsom-sige7.txt'
 				;;
 		esac
 	fi
